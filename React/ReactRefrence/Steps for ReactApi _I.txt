@@ -1,0 +1,22 @@
+Steps - Api - Json Server - Part 1
+1. Installs -
+npm i npm-run-all (parallel scripts)
+npm i json-server (mock server)
+npm i cross-env (cross env variables)
+
+2.Created server api folder - src within 
+3 files -
+-jsonserver.js - created a json server - db.json - 
+-fakedb.js - movie/actor - new movie
+-generatedb - fakedb - path/fs - db.json{} - server restarting
+
+4. package.json - scrips - executables 
+ "start": "run-p start:api",
+    "prestart:api": "node src/server/generateDb.js",
+    "start:api": "node src/server/jsonserverapi.js",
+  
+
+
+
+
+

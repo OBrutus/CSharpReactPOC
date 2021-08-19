@@ -1,0 +1,32 @@
+Steps - 2 - React Api
+1. Apicalls folder - Chkapi.js (response/error) , 
+movieApi - getMovies - fetch(url) - crossenv+/movies/,  
+actorApi - getActors
+
+2. Package.json -
+"start": "run-p start:dev start:api",
+    "prestart:api": "node src/server/generateDb.js",
+    "start:api": "node src/server/jsonserverapi.js",
+    "start:dev": "cross-env REACT_APP_API_URL=http://localhost:3001 
+react-scripts start",
+
+3.Movies.js
+- import movieapi - getmovies
+-hooks - useState(movies,setMovies -[])
+ useEffect(() => {
+    getMovies().then((_movies) => setMovies(_movies));
+  }, []);
+-map -movie 
+
+4.MovieList - smart/dumb -container/presentation
+props - props.movies.map
+
+5.Defaultprops - movies[] , propTypes - array/shape
+
+6.Movietitle - link - route param - id/slug
+
+7.App.js - path movie/:id - MovieDetail
+
+8.MovieDetail- {props.match.params.slug}
+
+    
