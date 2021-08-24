@@ -63,7 +63,6 @@ class Test extends Component {
   render() {
     var { isLoaded, items } = this.state;
     if (!isLoaded) return <div>Loading...</div>;
-	// console.log('3333333333333333333333333\n', items);
     return (
       <div>
         <ul>

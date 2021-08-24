@@ -1,0 +1,113 @@
+React Form CRUD- steps
+1.MovieDetail - props - <MovieForm
+        errors={errors}
+        movie={movie}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+        onDelete={handleDelete}
+2.Movie title,Genre,Actorid -
+Controlled form -React shd control the values
+3.value -{props.movie.title}{props.movie.genre}
+4.onChange - handler 
+5. function handleChange({ target }) {
+    setMovie({
+      ...movie,
+      [target.name]: target.value,
+    });
+  }
+6.usestate - movie value gets updated
+7.Movieform -  
+ name="title"
+onChange={props.onChange}
+value={props.movie.title}
+<form onSubmit={props.onSubmit}>
+
+8.movieApi - savemovie
+export function saveMovie(movie) {
+  return fetch(url + (movie.id || ""), {
+    method: movie.id ? "PUT" : "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      ...movie,
+      actorId: parseInt(movie.actorId, 10),
+    }),
+  })
+    .then(ResponseChk)
+    .catch(ErrorChk);
+}
+
+9.Submit - handleSubmit - 
+evt.preventDefault()
+SaveMovie(movie)
+
+10. Movies - validate if movie is added
+db.json - check for new added record
+----------
+Error - Validation
+1. Movie Detail - useState - set Errors - errorobj - 
+2.ValidForm - function ValidForm(params) {
+    const _errors = {};
+    if (!movie.title) _errors.title = "Please enter the movie title";
+    if (!movie.actorId) _errors.actorId = "Please select the actor ";
+    if (!movie.genre) _errors.genre = "Please enter the genre";
+    setErrors(_errors);
+    return Object.keys(_errors).length === 0;
+  }
+ 
+3.MovieForm - bootstrap classes - error, alert, has-error - check the length of the error
+
+{props.errors.title && (
+            <div className="alert alert-danger">{props.errors.title}</div>
+          )}
+
+4.Empty - validate - client side error messages - user friendly
+
+---Edit - populate the fields--
+1.movieapi - getmoviebyslug(slug)
+fetch(url + "?slug=" + slug)
+movies - movie[0]
+not found - error
+
+
+2.movieDetail - 
+ useEffect(() => {
+    const slug = props.match.params.slug; 
+    if (slug) {
+      movieApi.getMoviebySlug(slug).then((_movie) => setMovie(_movie));
+    }
+  }, []);
+
+3.App.js 
+slug param entry - specific it shd always be on top
+   <Route path="/movie/:slug" component={MovieDetail} />
+
+---Delete 
+1.Deletemovie(movieid)
+export function deleteMovie(movieId) {
+  return fetch(url + movieId, {
+    method: "DELETE",
+  })
+2.MovieForm - Deletebutton - onClick - onDelete
+3.handleDelete - onDelete
+4.deleteMovie(movie.id)
+function handleDelete(evt) {
+    evt.preventDefault();
+    movieApi.deleteMovie(movie.id).then(() => {
+      props.history.push("/movies");
+      alert("Movie deleted..");
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
