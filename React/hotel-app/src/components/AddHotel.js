@@ -22,7 +22,7 @@ export default function AddHotel({onAdd}) {
         setId('');
         setName('');
         setRooms('');
-        setDescription('')
+        setDescription('');
     }
 
     return (

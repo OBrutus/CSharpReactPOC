@@ -1,20 +1,16 @@
 {
-	"hotels": [
-		{
-			"id": 1,
-			"city": "Abad",
-			"room": 10,
-			"description": "This is common description"
-		}, {
-			"id": 2,
-			"city": "Jaipur",
-			"room": 10,
-			"description": "This is common description"
-		}, {
-			"id": 3,
-			"city": "Delhi",
-			"room": 10,
-			"description": "This is common description"
-		}
-	]
+  "hotels": [
+    {
+      "id": 2,
+      "city": "Jaipur",
+      "room": 10,
+      "description": "This is common description"
+    },
+    {
+      "id": 3,
+      "city": "Delhi",
+      "room": 10,
+      "description": "This is common description"
+    }
+  ]
 }
