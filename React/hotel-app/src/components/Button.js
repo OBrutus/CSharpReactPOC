@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function Button({title, clickHandler}) {
+export default function Button({title, onClick}) {
     return (
-        <button onClick={clickHandler}>
+        <button onClick = {onClick}>
             {title}
         </button>
     )
@@ -11,11 +11,8 @@ export default function Button({title, clickHandler}) {
 
 Button.propTypes = {
     text: PropTypes.string.isRequired,
-    clickHandler: PropTypes.func.isRequired
 }
 
 Button.defaultProps = {
-    clickHandler: () => {
-        console.log('clicked book room not implemented')
-    }
+    
 }

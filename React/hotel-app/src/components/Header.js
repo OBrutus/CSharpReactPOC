@@ -1,10 +1,12 @@
 import { PropTypes } from 'prop-types'
 import React from 'react'
+import Button from './Button'
 
-export default function Header({title}) {
+export default function Header({title, addHotel, buttonShow}) {
     return (
         <div>
             <h1>Hotel {title} </h1>
+            <Button title={buttonShow? 'Show' : 'HIDE'} onClick={addHotel}/>
         </div>
     )
 }
