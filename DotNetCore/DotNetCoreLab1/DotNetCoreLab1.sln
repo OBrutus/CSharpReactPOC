@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreLab1", "DotNetCoreLab1.csproj", "{5F3E07E1-2287-4FA9-B67E-640385D29098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchAspNetCore", "..\ScratchAspNetCore\ScratchAspNetCore.csproj", "{7B108CB8-EE45-49D0-8EEC-5C2D9CE64179}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F3E07E1-2287-4FA9-B67E-640385D29098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3E07E1-2287-4FA9-B67E-640385D29098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3E07E1-2287-4FA9-B67E-640385D29098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3E07E1-2287-4FA9-B67E-640385D29098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B108CB8-EE45-49D0-8EEC-5C2D9CE64179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B108CB8-EE45-49D0-8EEC-5C2D9CE64179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B108CB8-EE45-49D0-8EEC-5C2D9CE64179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B108CB8-EE45-49D0-8EEC-5C2D9CE64179}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {692F8EE4-4445-4B28-8B2F-CEF941A5EEA8}
+	EndGlobalSection
+EndGlobal
