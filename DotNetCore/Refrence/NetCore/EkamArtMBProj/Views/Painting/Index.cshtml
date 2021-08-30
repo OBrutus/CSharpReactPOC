@@ -1,0 +1,21 @@
+﻿@model IEnumerable<EkamArtMBProj.Models.Painting>
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <p class="display-4">Check out the latest Paintings!</p>
+        <table class="table table-hover">
+            @foreach (var painting in Model)
+            {
+                
+                <tr>
+                    <td>@painting.id</td>
+                    <td>@painting.Name</td>
+                    <td>@painting.Price</td>
+                </tr>
+            }
+        </table>
+    </body>
+    </html>

@@ -1,0 +1,88 @@
+﻿@*Block*@
+@{
+
+    int ctr = 10;
+    void disp(string custname)
+    {
+        <p>Cust Name: @custname</p>
+    }
+
+    disp("Krish");
+}
+
+@functions{
+
+    public string welcome()
+    {
+        return "Hey There!";
+    }
+
+}
+
+<div>@welcome()</div>
+
+<h2>ViewBag:@ViewBag.Title</h2>
+<h2>Viewdata:@ViewData["Movie Name"]</h2>
+<h2>TempData:@TempData["CustInfo"]</h2>
+
+@*implicit expr space-() *@
+<p>@DateTime.Now - TimeSpan.FromDays(2) </p>
+
+
+
+@*Explicit expression ()*@
+<p>@(DateTime.Now - TimeSpan.FromDays(2))</p>
+<!-- html comments -->
+
+
+
+@{ var cost = 50;
+    var message = "";}
+<div>
+    @if (cost > 40)
+    {
+        <p>Its costly!</p>
+    }
+    else
+    {
+        <p>Its cost effective</p>
+    }
+</div>
+
+<div>
+    @{
+        switch (cost)
+        {
+            case 50:
+                message = "The price is fifty";
+                break;
+            case 60:
+                message = "The price is sixty";
+                break;
+
+            case 70:
+                message = "The price is fifty";
+                break;
+
+
+        }
+
+        <h3>@message</h3>
+
+    }
+</div>
+
+
+@for (int i = 0; i < 10; i++)
+{
+<text>For loop: @i</text> 
+    @:For Loop @i
+}
+
+
+
+<a href="mailto://ezhil@gmail.com">ezhil@gmail.com</a>
+@@ezhil.art
+
+
+

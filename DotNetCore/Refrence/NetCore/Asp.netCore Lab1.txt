@@ -1,0 +1,19 @@
+.Net Core - Lab1
+
+1. Create a .net core mvc project from dotnet cli - explore the files, folders, structure - execute the app - check the flow
+
+2. Create a .net core empty from dotnet cli cmd - compare the mvc template , empty template
+
+3.Empty proj - add middleware - Welcome page, Handle the Exception, Static files - wwwroot - 2-3 html files - serve these static files
+
+4. Create a custom middleware and check how it gets executed in the pipeline
+
+5. Implement DI - create your own class , interface - add it as a service and execute it
+
+6.appSettings.json - Use the startup class to read this configuration and display it 
+
+7. Add Razor pages - route it to display
+
+8.Add Controller - Add Views - display them
+
+9.Mapget(/) - Customize the route path /text values

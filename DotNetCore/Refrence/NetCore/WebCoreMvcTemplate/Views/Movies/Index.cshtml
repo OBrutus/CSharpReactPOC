@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebCoreMvcTemplate.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Check the Latest Movies!</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MStar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td >
+              @item.id
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @item.MName
+                @Html.DisplayFor(modelItem => item.MName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MStar)
+            </td>
+            <td>
+                @Html.ActionLink("Update", "Edit", new { /* id=item.PrimaryKey */ }) |
+               
+                <a asp-action="Details" asp-route-id="@item.id">Details-Tag</a>|
+
+                @Html.ActionLink("Info", "Details", new {  id=item.id  }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
