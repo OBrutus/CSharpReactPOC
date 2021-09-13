@@ -1,0 +1,98 @@
+Steps - Empty Proj - Art Gallery - EF
+1. Installation - EFcore,EfSqlserver,EfTools - version
+
+2.PainitingDbcontext :DbContext - constructor
+
+3.Dbset - painting, categories
+
+4. Seed the db - model creating method -initial data
+
+5.Repos - painting/category [instead inmemory repo] 
+
+6. PaintingDbcontext - DI - inject - 
+
+7.EF - register startup.cs - usesqlserver -
+ 
+8. Connection string - create inside appsettings.json
+
+9. Get the appsettings.json - IConfiguration - DI - 
+
+10. Configuration - GetConnstring - defaultconnection
+
+11.DI - Services IPaintingRepo PaintingRepo/Icategory Catrepo
+
+12. Controllers - 
+Home - Paintings of the week - HomeViewModel - View - Painting Partial view
+
+13. Painting - All paintings - DI of paintingrepo/Category Repo -Based on Category
+-GetpaintingbyId - Details View - painting by id - routeparam
+
+14.Register - OVerloaded index method - get/post - Check out - 
+
+15.Order.cs - Data annotaions - form - post action - redirecting to check out
+
+16. Shopping Cart item - all props /Shopping Cart - all methods - get cart(unique session based cart), Add to cart, remove from cart, Clear cart, List items, Total
+
+17.Startup.cs - Getcart - session context - use session
+
+18.Shopping cart controller - DI - SC,INdex - get cart items,  Add item, Remove
+
+19.Shopping Cart view - Table - Cart bill - calculating sub total - add/remove + /- , clear - all items - continue shopping, check out - order
+
+20.Identity - Install identiy packages - core,ui - Scaffold identity - login, logout,register\
+
+21. Login partial - Migration - shopping/Identity
+
+22.Startup -  services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<EkamArtMBProjContext>();
+
+app.UseAuthentication();
+            app.UseAuthorization();
+
+23. Delete this entry from IdentityHostingStartup.cs
+
+24.Google - Open id /Open Auth
+
+25. https://console.cloud.google.com/
+
+26. Project - Api Credetial -redirect url-localhost.com:portno/signin-google
+ Client ID/Secret - copy 
+
+27.Manage user secrets - dotnet cli - store secrets in project
+
+28. Install Authentication.google
+29. Start up - 
+services.AddAuthentication()
+                  .AddGoogle(opts =>
+                  {
+                      IConfigurationSection configurationSection =
+                      Configuration.GetSection("Authentication:Google");
+                      opts.ClientId = configurationSection["ClientId"];
+                      opts.ClientSecret = configurationSection["ClientSecret"]; 
+                      opts.SignInScheme = IdentityConstants.ExternalScheme;
+                  });
+
+30. Check in Login - external login - Use either local identity or google  - confirm the google identity - logged in using google
+
+31. Facebook/Microsoft/LinkedIn 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+Steps - Empty Proj -Art Gallery CS
+1.Empty template
+2.Startup.cs -  services.AddControllersWithViews();
+ endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseFileServer() - wwwroot
+3.Create folders - Models/Controllers/Views
+4.Model - Painting.cs ,IPainting, InMemoryPainting(mock data) , Category.cs/ICategory/InMemoryCategory
+5.Controller - Home/Paintings - Index
+6.Repo pattern - Service injected.
+7.Startup.cs -ConfigureServices()
+ services.AddScoped<IPaintingRepo, InMemoryPaintingRepo>();
+8.Views - Home-Index, Painting-Index, Contact-Index(Tag helper- email)
+9.Bootstrap - Libman - cdnjs/unpkg -  client- Bootstrap.css/js,Jquery,Fontawesome
+10.Client Library - wwwroot.
+11._Layout - files to be included
+12._ViewImport - imported library/modules/taghelper
+13._ViewStart - _Layout
+14. ViewComponent - Dynamic Menu - Category
+15. Folder - Components - CategoryMenu - Invoke (_Layout)
+16.Views>Shared>Components>CategoryMenu>Default.cshtml - Category- route
+17.ViewModel - HomeViewModel(paintingsoftheweek),PaintingsListViewModel(Paintings/Category)
+18.Paintings.cs - Domain model -more fields- relationship to the Category - CategoryId
+19.Startup -  services.AddScoped<ICategoryRepo, InMemoryCategoryRepo>();
+20.Partial page - PaintingCard -Home-Index(VM) - Painting-Index(VM) <- VC 
+21.Model Mock data to be updated - interface implemented 
+22.Data Annotations - Model Validations(Form revisit)
+23.Shopping Cart icon - Static content - 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

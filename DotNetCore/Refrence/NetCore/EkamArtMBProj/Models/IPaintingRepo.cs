@@ -7,6 +7,8 @@ namespace EkamArtMBProj.Models
 {
    public interface IPaintingRepo
     {
-        IEnumerable<Painting> GetAllPaintings();
+        IEnumerable<Painting> Allpaintings { get; }
+       // IEnumerable<Painting> PaintingsOfTheWeek { get; set; }
+        Painting GetPaintingById();
     }
 }

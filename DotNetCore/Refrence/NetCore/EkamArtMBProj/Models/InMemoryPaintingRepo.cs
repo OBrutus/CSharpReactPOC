@@ -12,14 +12,54 @@ namespace EkamArtMBProj.Models
         {
             _paintings = new List<Painting>
             {
-                new Painting{id=1,Name="Sunset at Malvern",Price=40000},
-                new Painting{id=2,Name="Peacock Portrait",Price=40000},
-                new Painting{id=3,Name="Koi in a pond",Price=40000},
+                new Painting{  
+                    PaintingId = 1,
+                     Name = "Diagon Alley",
+                     Price = 15000,
+                     ShortDescription = "Lorem Ipsum",
+                     LongDescription = "A Beautiful painting that can enhance your home space!",
+                     CategoryId = 1,
+                     ImageUrl = "/images/Alley.jpg",
+                     InStock = true,
+                     IsPaintingOfTheWeek = false,
+                     ImageThumbnailUrl = "/images/Alley.jpg"},
+                new Painting{PaintingId = 2,
+                    Name = "Portrait of a Sadhu",
+                    Price = 10000,
+                    ShortDescription = "Lorem Ipsum",
+                    LongDescription = "A Beautiful painting that can enhance your home space!",
+                    CategoryId = 2,
+                    ImageUrl = "/images/saadhu.jpg",
+                    InStock = true,
+                    IsPaintingOfTheWeek = false, 
+                    ImageThumbnailUrl = "/images/saadhu.jpg"},
+                new Painting{ PaintingId = 3,
+                    Name = "Stairway to Heaven",
+                    Price = 20000,
+                    ShortDescription = "Lorem Ipsum",
+                    LongDescription = "A Beautiful painting that can enhance your home space!",
+                    CategoryId = 3,
+                    ImageUrl = "/images/Well.jpg",
+                    InStock = true,
+                    IsPaintingOfTheWeek = false,
+                    ImageThumbnailUrl = "/images/Well.jpg"},
             };
         }
-        public IEnumerable<Painting> GetAllPaintings()
+
+        public IEnumerable<Painting> Allpaintings
         {
-            return _paintings.OrderBy(r => r.Name);
+            get
+            {
+                return _paintings;
+            }
+        }
+
+        public IEnumerable<Painting> PaintingsOfTheWeek { get { return _paintings; } }
+
+       
+        public Painting GetPaintingById()
+        {
+            throw new NotImplementedException();
         }
     }
 }

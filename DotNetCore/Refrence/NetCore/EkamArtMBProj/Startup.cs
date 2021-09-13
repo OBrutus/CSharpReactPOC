@@ -18,6 +18,7 @@ namespace EkamArtMBProj
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IPaintingRepo, InMemoryPaintingRepo>();
+            services.AddScoped<ICategoryRepo, InMemoryCategoryRepo>();
             services.AddControllersWithViews();
         }
 

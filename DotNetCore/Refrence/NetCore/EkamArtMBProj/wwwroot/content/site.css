@@ -1,0 +1,129 @@
+﻿
+
+body {
+    
+  /*  background-image: url('/images/Leaves.jfif');*/
+    background-size:cover;
+    font-family: 'Lora';
+    font-size:20px;
+    padding-top:70px;
+}
+
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+    .caption h4 {
+        white-space: nowrap;
+    }
+
+.thumbnail img {
+    width: 100%;
+}
+
+.addToCart {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+    .thumbnail .caption-full {
+        padding: 9px;
+        color: #333;
+    }
+
+footer {
+    margin: 50px 0;
+}
+
+.navbar {
+    background-image: none;
+}
+
+.navbar-inverse {
+    background-color: #a593c2;
+    border-color: #a593c2;
+}
+
+#btnlink{
+    color:midnightblue;
+    background-color:darkorange;
+    font-size:25px;
+
+
+}
+
+ li a {
+    font-size: 20px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color:coral;
+    padding:15px;
+    text-decoration:none;
+    font-family:Kalam;
+       
+
+}
+.nav-item{
+    color:coral;
+
+}
+ .nav
+ a:visited{
+     color:cadetblue;
+ }
+.carousel .item {
+    height: 400px;
+}
+
+.lnk{
+    text-decoration:none;
+  font-size:20px;
+
+}
+
+a{
+    text-decoration:none;
+}
+
+   li a:hover {
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.50);
+    }
+
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    background-color:  #fcaeae !important;
+    border-color: #fba1a1 !important;
+}
+
+.btn {
+    background-color: #fcaeae !important;
+    border-color: #fba1a1 !important;
+}
+
+#logout {
+    box-shadow: 1px 1px 2px grey;
+}

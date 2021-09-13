@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EkamArtMBProj.Models;
+using EkamArtMBProj.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,21 @@ namespace EkamArtMBProj.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IPaintingRepo _paintingRepo;
+
+        //DI
+        public HomeController(IPaintingRepo paintingRepo)
+        {
+            _paintingRepo = paintingRepo;
+
+        }
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                PaintingsOfTheWeek = _paintingRepo.Allpaintings
+            };
+             return View(homeViewModel);
         }
     }
 }

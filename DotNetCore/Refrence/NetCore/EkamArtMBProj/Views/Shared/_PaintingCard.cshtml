@@ -1,0 +1,27 @@
+﻿@model Painting
+
+<div class="col-sm-3">
+    <div class="card-deck">
+        <div class="card shadow">
+            <img class="card-img-top img-thumbnail" src="@Model.ImageUrl" />
+            <div class="card-body">
+                <h3 class="pull-right">@Model.Price</h3>
+                <h4 class="card-title">
+                    @Model.Name
+
+
+                </h4>
+                <p class="card-text">
+                   &ldquo; @Model.LongDescription &rdquo;
+                </p>
+                <a class="lnk btn btn-success btn-block">
+                    Add to Cart
+                </a>
+               
+            </div>
+        </div>
+    </div>
+
+</div>
+
+ 

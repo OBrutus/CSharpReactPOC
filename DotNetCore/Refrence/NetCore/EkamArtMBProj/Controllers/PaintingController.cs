@@ -1,4 +1,5 @@
 ﻿using EkamArtMBProj.Models;
+using EkamArtMBProj.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,17 +10,36 @@ namespace EkamArtMBProj.Controllers
 {
     public class PaintingController : Controller
     {
-        private IPaintingRepo _paintingdata;
+        private readonly IPaintingRepo _paintingRepo;
+        private readonly ICategoryRepo _categoryRepo;
         //Dependency Injection
-        public PaintingController(IPaintingRepo paintingrepo)
+        public PaintingController(IPaintingRepo paintingRepo,ICategoryRepo categoryRepo)
         {
-            _paintingdata = paintingrepo;
+            _paintingRepo = paintingRepo;
+            _categoryRepo = categoryRepo;
 
         }
-        public IActionResult Index()
+        public IActionResult Index(string category)
         {
-            var model = _paintingdata.GetAllPaintings();
-            return View(model);
+            IEnumerable<Painting> paintings;
+            string currentCategory;
+
+            if (string.IsNullOrEmpty(category))
+            {
+                paintings = _paintingRepo.Allpaintings.OrderBy(p => p.PaintingId);
+                currentCategory = "All Paintings";
+            }
+            else
+            {
+                paintings = _paintingRepo.Allpaintings.Where(p => p.Category.CategoryName == category)
+                    .OrderBy(p => p.PaintingId);
+                currentCategory = _categoryRepo.AllCategories.FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
+            }
+            return View(new PaintingsListViewModel
+            { 
+                Paintings = paintings,
+                CurrentCategory = currentCategory
+            });
         }
     }
 }

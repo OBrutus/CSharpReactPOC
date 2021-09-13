@@ -4,8 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Ekam Art</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <environment include="Development">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+        <link href="~/content/site.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    </environment>
 </head>
 <body>
     <header>
@@ -19,12 +26,26 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color:darkcyan">
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                Home
+                            </a>
+                        </li>
+                        @await Component.InvokeAsync("CategoryMenu")
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Painting" asp-action="Index">Art Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Painting" asp-action="Index">Painting</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">
+                                Contact Us
+                            </a>
                         </li>
-                      
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="ShoppingCart" asp-action="Index" >
+                                <span class="fa fa-shopping-cart"></span>
+                                1
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -41,8 +62,7 @@
             &copy; 2021 - Ekam Art Site - <a asp-area="" asp-controller="Home" asp-action="Index">Art</a>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

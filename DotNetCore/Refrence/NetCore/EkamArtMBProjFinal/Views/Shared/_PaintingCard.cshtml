@@ -1,0 +1,31 @@
+﻿@model Painting
+
+<div class="col-sm-3">
+    <div class="card-deck">
+        <div class="card shadow">
+            <img class="card-img-top img-thumbnail" src="@Model.ImageUrl" />
+            <div class="card-body">
+                <h3 class="pull-right">@Model.Price</h3>
+                <h4 class="card-title">
+                    <a asp-controller="Painting" asp-action="Details" asp-route-id="@Model.PaintingId" >
+
+                        @Model.Name
+                    </a>
+                  
+
+
+                </h4>
+                <p class="card-text">
+                   &ldquo; @Model.LongDescription &rdquo;
+                </p>
+                <a class="lnk btn btn-success btn-block mt-2" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-paintingid="@Model.PaintingId">
+                    Add to Cart
+                </a>
+               
+            </div>
+        </div>
+    </div>
+
+</div>
+
+ 
